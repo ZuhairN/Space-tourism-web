@@ -17,13 +17,24 @@
 
 <body>
   <header>
-    <img class="logo" src="./assets/shared/logo.svg" alt="">
-    <img class="hamb" src="./assets/shared/icon-hamburger.svg" alt="">
+    <div><img class="logo" src="./assets/shared/logo.svg" alt=""></div>
+    <!-- <img class="hamb" src="./assets/shared/icon-hamburger.svg" alt=""> -->
+    <button class="mobile-nav-toggle" aria-expanded="false"></button>
     <nav>
-      <a href="./index.html">00 Home</a>
-      <a href="./destination-moon.html">01 Destination</a>
-      <a href="./crew-commander.html">02 Crew</a>
-      <a href="./technology-vehicle.html">03 Technology</a>
+      <ul class="primary-nav" data-visible="false">
+        <li>
+          <a href="./index.html"><span>00</span>Home</a>
+        </li>
+        <li>
+          <a href="./destination-moon.html"><span>01</span>Destination</a>
+        </li>
+        <li>
+          <a href="./crew-commander.html"><span>02</span>Crew</a>
+        </li>
+        <li>
+          <a href="./technology-vehicle.html"><span>03</span>Technology</a>
+        </li>
+      </ul>
     </nav>
   </header>
   <main>
@@ -34,8 +45,11 @@
         outer space and not hover kind of on the edge of it. Well sit back, and relax
         because we’ll give you a truly out of this world experience!</p>
     </section>
-    <div>Explore<a href="./destination-moon.html"> <span class="link"></span></a> </div>
+    <div class="explore">Explore<a href="./destination-moon.html"> <span class="link"></span></a> </div>
   </main>
+  <footer>
+    <script src="./js/app.js"></script>
+  </footer>
 </body>
 
 </html>
