@@ -1,33 +1,175 @@
+/* --------------------------- */
+/* Custom Properties           */
+/* --------------------------- */
+
+:root {
+  /* colors */
+  --clr-dark: hsl(230, 35%, 7%);
+  --clr-light: hsl(231, 77%, 90%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* font-sizes */
+  /* use numbers to mimic font-weight */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  /* font-families */
+  --ff-serif: 'Bellefair', serif;
+  --ff-sans-cond: 'Barlow Condensed', sans-serif;
+  --ff-sans-normal: 'Barlow', sans-serif;
+}
+
+/* --------------------------- */
+/* Design System               */
+/* --------------------------- */
 body {
-    box-sizing: border-box;
-    font-family: 'Bellefair', serif;
-    background: url(../assets/home/background-home-mobile.jpg) no-repeat top/cover;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  /* default setting for body */
+  line-height: 1.5;
+  min-height: 100vh;
+  /* ---- */
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
+  background: url(../assets/home/background-home-mobile.jpg) no-repeat top/cover;
+  color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --------------------------- */
+/* Utility Classes             */
+/* --------------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  /* logical property just left right access*/
+  max-width: 80rem;
+}
+
+/* Colors */
+
+.bg-dark {
+  background-color: var(--clr-dark);
+}
+
+.bg-light {
+  background-color: var(--clr-light);
+}
+
+.bg-white {
+  background-color: var(--clr-white);
+}
+
+.txt-dark {
+  color: var(--clr-dark);
+}
+
+.txt-light {
+  color: var(--clr-light);
+}
+
+.txt-white {
+  color: var(--clr-white);
+}
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+.ff-sans-cond {
+  font-family: var(--ff-sans-cond);
+}
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
 }
 
 * a {
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--clr-white);
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
 header img.logo {
-    width: 2.5em;
-    margin: 2rem;
+  width: 2.5em;
+  margin: 2rem;
 }
 
 .mobile-nav-toggle {
-    display: none;
+  display: none;
 }
 
 /* header img.hamb {
@@ -37,128 +179,125 @@ header img.logo {
 } */
 
 h5 {
-    font-family: 'Barlow Condensed', sans-serif;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 2.5px;
-    color: #D0D6F9;
-    /* text-align: center; */
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  color: var(--clr-light);
+  /* text-align: center; */
 }
 
 h1 {
-    text-transform: uppercase;
-    /* text-align: center; */
-    /* padding: 2em 3em; */
-    line-height: 1.5em;
-    font-size: 4.7rem;
-    letter-spacing: 1px;
-    margin: 0.8rem 0;
+  text-transform: uppercase;
+  /* text-align: center; */
+  /* padding: 2em 3em; */
+  line-height: 1.5em;
+  font-size: 4.7rem;
+  letter-spacing: 1px;
+  margin: 0.8rem 0;
 }
 
 p {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5em;
-    letter-spacing: 1px;
-    color: #D0D6F9;
-    /* text-align: center; */
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  color: var(--clr-light);
+  /* text-align: center; */
 }
 
 section {
-    margin: 1.5em;
-    text-align: center;
+  margin: 1.5em;
+  text-align: center;
 }
 
 .explore {
-    width: 150px;
-    height: 150px;
-    background-color: white;
-    border-radius: 50%;
-    margin: 5.375rem auto 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 0px 0px #c9c9c9;
-    transition: box-shadow 0.275s linear;
-    color: #0B0D17;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-
+  width: 150px;
+  height: 150px;
+  background-color: var(--clr-white);
+  border-radius: 50%;
+  margin: 5.375rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 0px 0px #c9c9c9;
+  transition: box-shadow 0.275s linear;
+  color: var(--clr-dark);
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  position: relative;
 }
 
 .explore:hover {
-    box-shadow: 0px 0px 0px 20px rgba(201, 201, 201, 0.2);
+  box-shadow: 0px 0px 0px 20px rgba(201, 201, 201, 0.2);
 }
 
-
 .link {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .primary-nav {
-    display: flex;
-    background: hsl(0, 0%, 100%, 0.1);
-    backdrop-filter: blur(1rem);
+  display: flex;
+  background: hsl(0, 0%, 100%, 0.1);
+  backdrop-filter: blur(1rem);
 }
 
 .primary-nav span {
-    font-weight: 700;
-    margin-inline-end: 0.75em;
-    font-family: 'Barlow Condensed', sans-serif;
-
+  font-weight: 700;
+  margin-inline-end: 0.75em;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 li {
-    padding: 1rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    letter-spacing: 3px;
+  padding: 1rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 3px;
 }
 
-@media (max-width:35em) {
-    .primary-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 30%;
-        flex-direction: column;
-        padding: 8rem 1.5rem;
-        z-index: 1000;
-        transform: translateX(100%);
-        transition: transform 350ms ease-out;
-    }
+@media (max-width: 35em) {
+  .primary-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 30%;
+    flex-direction: column;
+    padding: 8rem 1.5rem;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
 
-    .primary-nav[data-visible="true"] {
-        transform: translateX(0%);
-    }
+  .primary-nav[data-visible='true'] {
+    transform: translateX(0%);
+  }
 
-    .mobile-nav-toggle {
-        display: block;
-        position: absolute;
-        background: url("../assets/shared/icon-hamburger.svg");
-        background-repeat: no-repeat;
-        width: 24px;
-        height: 21px;
-        border: 0;
-        top: 2.6rem;
-        right: 2.5rem;
-        z-index: 9999;
-        outline: none;
-    }
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    background: url('../assets/shared/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 21px;
+    border: 0;
+    top: 2.6rem;
+    right: 2.5rem;
+    z-index: 9999;
+    outline: none;
+  }
 
-    .mobile-nav-toggle[aria-expanded="true"] {
-        background: url("../assets/shared/icon-close.svg");
-        width: 19.09px;
-        height: 19.09px;
-
-    }
+  .mobile-nav-toggle[aria-expanded='true'] {
+    background: url('../assets/shared/icon-close.svg');
+    width: 19.09px;
+    height: 19.09px;
+  }
 }

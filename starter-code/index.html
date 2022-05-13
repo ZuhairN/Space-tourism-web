@@ -4,23 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 
 <body>
   <header>
     <div><img class="logo" src="./assets/shared/logo.svg" alt=""></div>
-    <!-- <img class="hamb" src="./assets/shared/icon-hamburger.svg" alt=""> -->
+    <!-- aria-expanded...to toggle between logos -->
     <button class="mobile-nav-toggle" aria-expanded="false"></button>
     <nav>
+      <!-- data-visible...to toggle navbar on/off -->
       <ul class="primary-nav" data-visible="false">
         <li>
           <a href="./index.html"><span>00</span>Home</a>
@@ -45,6 +44,7 @@
         outer space and not hover kind of on the edge of it. Well sit back, and relax
         because we’ll give you a truly out of this world experience!</p>
     </section>
+    <!-- <span> to make whole div as a link -->
     <div class="explore">Explore<a href="./destination-moon.html"> <span class="link"></span></a> </div>
   </main>
   <footer>
