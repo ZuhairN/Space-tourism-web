@@ -5,47 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="css/reset.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 
 <body>
   <header>
-    <div><img class="logo" src="./assets/shared/logo.svg" alt=""></div>
+    <div><img class="logo" src="./assets/shared/logo.svg" alt="space tourism logo"></div>
     <!-- aria-expanded...to toggle between logos -->
     <button class="mobile-nav-toggle" aria-expanded="false"></button>
     <nav>
       <!-- data-visible...to toggle navbar on/off -->
-      <ul class="primary-nav" data-visible="false">
+      <ul class="primary-nav txt-white ff-sans-cond fs-300 uppercase char-space-2" data-visible="false">
         <li>
-          <a href="./index.html"><span>00</span>Home</a>
+          <a href="./index.html"><span class="nav-number">00</span>Home</a>
         </li>
         <li>
-          <a href="./destination-moon.html"><span>01</span>Destination</a>
+          <a href="./destination-moon.html"><span class="nav-number">01</span>Destination</a>
         </li>
         <li>
-          <a href="./crew-commander.html"><span>02</span>Crew</a>
+          <a href="./crew-commander.html"><span class="nav-number">02</span>Crew</a>
         </li>
         <li>
-          <a href="./technology-vehicle.html"><span>03</span>Technology</a>
+          <a href="./technology-vehicle.html"><span class="nav-number">03</span>Technology</a>
         </li>
       </ul>
     </nav>
   </header>
   <main>
     <section>
-      <h5>So, you want to travel to</h5>
-      <h1>Space</h1>
-      <p> Let’s face it; if you want to go to space, you might as well genuinely go to
+      <p class="txt-light ff-sans-cond fs-100 uppercase char-space-2">So, you want to travel to <span
+          class="txt-white ff-serif fs-900">Space</span></p>
+      <p class="txt-light ff-sans-normal fs-400"> Let’s face it; if you want to go to space, you might as well genuinely
+        go to
         outer space and not hover kind of on the edge of it. Well sit back, and relax
         because we’ll give you a truly out of this world experience!</p>
     </section>
-    <!-- <span> to make whole div as a link -->
-    <div class="explore">Explore<a href="./destination-moon.html"> <span class="link"></span></a> </div>
+    <a href="./destination-moon.html" class="lg-btn uppercase ff-serif fs-500 txt-dark bg-white">Explore</a>
   </main>
   <footer>
     <script src="./js/app.js"></script>
