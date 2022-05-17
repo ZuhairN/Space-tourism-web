@@ -1,0 +1,67 @@
+:root {
+  --bg-dest-img: url(../assets/destination/background-destination-mobile.jpg);
+  --bg-moon-img: url(../assets/destination/image-moon.png);
+
+  --gap: 1.69rem;
+}
+@media (min-width: 35em) {
+  :root {
+    --bg-dest-img: url(../assets/destination/background-destination-tablet.jpg);
+    --gap: 2.25rem;
+  }
+}
+@media (min-width: 45em) {
+  :root {
+    --bg-dest-img: url(../assets/destination/background-destination-desktop.jpg);
+  }
+}
+
+body {
+  background-image: var(--bg-dest-img);
+}
+
+.title-num {
+  font-weight: 700;
+  margin-inline-end: 0.5rem;
+  color: hsl(var(--clr-white), 0.25);
+}
+
+.btn-tabs {
+  --underline-gap: 0.75rem;
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-300);
+  letter-spacing: var(--ltr-spc);
+  text-transform: uppercase;
+  background-color: transparent;
+  color: hsl(var(--clr-light), 1);
+}
+
+.sub-content {
+  flex-direction: column;
+  --gap: 2rem;
+}
+.sub-content p {
+  font-size: 1.75rem;
+}
+
+main {
+  gap: 1rem;
+  grid-auto-flow: columns;
+  margin: 0 1.5rem 3rem;
+}
+main > div {
+  flex-direction: column;
+  align-items: center;
+}
+.img {
+  max-width: 60%;
+}
+.main-content {
+  flex-direction: column;
+  align-items: center;
+}
+article {
+  line-height: 1.7;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid hsl(var(--clr-white), 0.25);
+}

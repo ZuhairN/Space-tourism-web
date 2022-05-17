@@ -1,37 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/destination.css" />
   <title>Frontend Mentor | Space tourism website</title>
 </head>
+
 <body>
+  <header>
+    <div>
+      <img class="logo" src="./assets/shared/logo.svg" alt="space tourism logo" />
+    </div>
+    <!-- aria-expanded...to toggle between logos -->
+    <button class="mobile-nav-toggle" aria-expanded="false"></button>
+    <nav>
+      <!-- data-visible...to toggle navbar on/off -->
+      <ul class="primary-nav underline-indicators txt-white ff-sans-cond fs-400 uppercase char-space-2"
+        data-visible="false">
+        <li class="active">
+          <a href="./index.html"><span class="nav-num">00</span>Home</a>
+        </li>
+        <li>
+          <a href="./destination-moon.html"><span class="nav-num">01</span>Destination</a>
+        </li>
+        <li>
+          <a href="./crew-commander.html"><span class="nav-num">02</span>Crew</a>
+        </li>
+        <li>
+          <a href="./technology-vehicle.html"><span class="nav-num">03</span>Technology</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="flex">
+      <h1 class="fs-500 ff-sans-cond ltr-space uppercase"><span class="title-num">01</span>Pick your destination</h1>
+      <img class="img" src="./assets/destination/image-moon.png" alt="The Moon" />
+    </div>
+    <section class="main-content flex">
+      <div class="flex underline-indicators">
+        <button class="btn-tabs" aria-selected="true">Moon</button>
+        <button class="btn-tabs" aria-selected="false">Mars</button>
+        <button class="btn-tabs" aria-selected="false">Europa</button>
+        <button class="btn-tabs" aria-selected="false">Europa</button>
+      </div>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
-
-  01 Pick your destination
-
-  Moon
-  Mars
-  Europa
-  Titan
-
-  Moon
-
-  See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
-  regain perspective and come back refreshed. While you’re there, take in some history 
-  by visiting the Luna 2 and Apollo 11 landing sites.
-
-  Avg. distance
-  384,400 km
-
-  Est. travel time
-  3 days
+      <article>
+        <h2 class="fs-800 uppercase ff-serif">Moon</h2>
+        <p class="ff-sans-normal txt-light fs-400">
+          See our planet as you’ve never seen it before. A perfect relaxing trip
+          away to help regain perspective and come back refreshed. While you’re
+          there, take in some history by visiting the Luna 2 and Apollo 11 landing
+          sites.
+        </p>
+      </article>
+      <div class="sub-content flex">
+        <div>
+          <h3 class="txt-light fs-200 uppercase ff-sans-cond">Avg. distance</h3>
+          <p class="ff-serif uppercase ff-serif"> 384,400 km</p>
+        </div>
+        <div>
+          <h3 class="txt-light fs-200 uppercase ff-sans-cond">Est. travel time</h3>
+          <p class="ff-serif uppercase ff-serif">3 days</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <script src="./js/app.js"></script>
+  </footer>
 </body>
+
 </html>
