@@ -50,7 +50,7 @@
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 57em) {
   :root {
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
@@ -224,7 +224,7 @@ section {
   padding: 0 1rem;
 }
 .primary-nav li {
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 
 .nav-num {
@@ -340,7 +340,7 @@ section {
 }
 
 /* ----------------Tablet Navigation Bar---------------- */
-@media (min-width: 35em) and (max-width: 44.9999em) {
+@media (min-width: 35em) {
   body {
     background-position: center center;
   }
@@ -350,7 +350,7 @@ section {
 }
 
 /* ----------------Desktop Navigation Bar---------------- */
-@media (min-width: 45em) {
+@media (min-width: 57em) {
   header::after {
     content: '';
     display: block;
