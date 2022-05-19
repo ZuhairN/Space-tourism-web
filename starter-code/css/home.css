@@ -1,0 +1,95 @@
+:root {
+  --bg-page-img: url(../assets/home/background-home-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+  :root {
+    --bg-page-img: url(../assets/home/background-home-tablet.jpg);
+  }
+}
+
+@media (min-width: 57em) {
+  :root {
+    --bg-page-img: url(../assets/home/background-home-desktop.jpg);
+  }
+}
+
+/* main style */
+main {
+  grid-template-rows: 1fr 1fr;
+}
+
+section {
+  max-width: 450px;
+  text-align: center;
+  place-self: flex-start center;
+}
+
+.body-txt {
+  line-height: 1.6;
+}
+
+.head-1 {
+  display: inline-block;
+  margin: 1.4rem 0;
+}
+
+.lg-btn {
+  place-self: center;
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.25rem, 1.2rem + 1.4vw, 2.4rem);
+  width: 7.5em;
+  height: 7.5em;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  /* To prevent -1 index from escaping outside the btn */
+}
+/* To make the hover effect in a fancy way */
+.lg-btn::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--clr-white), 0.136);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 300ms linear, transform 300ms ease-in-out;
+}
+/* -------------------------- */
+.lg-btn:hover::after,
+.lg-btn:focus::after {
+  /* Instead of doing animation in width and height, cuz that will slow the website*/
+  opacity: 1;
+  transform: scale(1.64);
+}
+
+/* --------------Media-Query----------------- */
+@media (min-width: 35em) {
+  body {
+    background-position: center center;
+  }
+  main {
+    margin-top: 2rem;
+  }
+  section {
+    place-self: center;
+  }
+}
+@media (min-width: 57em) {
+  main {
+    margin: 0 0 8rem 4rem;
+    place-items: end;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  section {
+    text-align: start;
+    place-self: end center;
+  }
+  .lg-btn {
+    place-self: end center;
+  }
+}

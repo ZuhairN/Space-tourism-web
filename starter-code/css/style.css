@@ -19,14 +19,12 @@
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
-  --ltr-spc: 2.7px;
-
   /* font-families */
   --ff-serif: 'Bellefair', serif;
   --ff-sans-cond: 'Barlow Condensed', sans-serif;
   --ff-sans-normal: 'Barlow', sans-serif;
 
-  --bg-home-img: url(../assets/home/background-home-mobile.jpg);
+  --ltr-spc: 2.7px;
   --logo-w: 2.5rem;
   --logo-m: 1.5rem;
   --underline-gap: 0.5rem;
@@ -42,8 +40,6 @@
     --fs-400: 1rem;
 
     --ltr-spc: 3.38px;
-
-    --bg-home-img: url(../assets/home/background-home-tablet.jpg);
     --logo-w: 3rem;
     --logo-m: 1.5rem 2.44rem;
     --underline-gap: 2.15rem;
@@ -59,8 +55,6 @@
     --fs-400: 1.125rem;
 
     --ltr-spc: 4.72px;
-
-    --bg-home-img: url(../assets/home/background-home-desktop.jpg);
     --logo-m: 4rem 3.44rem;
     --underline-gap: 1.5rem;
   }
@@ -70,17 +64,14 @@
 /* Design System               */
 /* --------------------------- */
 body {
-  /* default setting for body */
-  line-height: 1.5;
-  min-height: 100vh;
-  /*-*/
+  line-height: 1.5; /* default setting for body */
+  min-height: 100vh; /*--*/
   display: grid;
   grid-template-rows: min-content 1fr;
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
-  background: var(--bg-home-img) no-repeat bottom/cover;
+  background: var(--bg-page-img) no-repeat bottom/cover;
   color: hsl(var(--clr-white));
-  /* overflow: hidden; */
 }
 
 * {
@@ -102,8 +93,12 @@ img {
   gap: var(--gap, 1rem);
 }
 
-/* Colors */
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
 
+/* Colors */
 .bg-dark {
   background-color: hsl(var(--clr-dark));
 }
@@ -128,6 +123,7 @@ img {
   color: hsl(var(--clr-white));
 }
 
+/* Font-Families */
 .ff-serif {
   font-family: var(--ff-serif);
 }
@@ -138,14 +134,7 @@ img {
   font-family: var(--ff-sans-normal);
 }
 
-.ltr-space {
-  letter-spacing: var(--ltr-spc);
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
+/* Font-Sizes */
 .fs-900 {
   font-size: var(--fs-900);
 }
@@ -171,6 +160,14 @@ img {
   font-size: var(--fs-200);
 }
 
+.ltr-space {
+  letter-spacing: var(--ltr-spc);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 .fs-900,
 .fs-800,
 .fs-700,
@@ -185,7 +182,7 @@ img {
 
 /* header style */
 header {
-  display: flex;
+  --gap: 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -198,33 +195,12 @@ header img.logo {
 /* main style */
 main {
   display: grid;
-  place-items: center;
-  grid-template-rows: min-content 1fr;
-  margin: 4rem 1.5rem 0;
-}
-
-section {
-  max-width: 450px;
-  text-align: center;
-}
-
-.body-txt {
-  line-height: 1.6;
-}
-
-.head-1 {
-  display: inline-block;
-  margin: 1.4rem auto;
+  margin: 1rem 1.5rem 0;
 }
 
 .primary-nav {
-  display: flex;
   background: hsl(var(--clr-white), 0.1);
   backdrop-filter: blur(1.5rem);
-  padding: 0 1rem;
-}
-.primary-nav li {
-  margin: 0 1.5rem;
 }
 
 .nav-num {
@@ -236,40 +212,9 @@ section {
 /* Components         */
 /* ------------------ */
 
-.lg-btn {
-  display: grid;
-  place-items: center;
-  /* to center horizontally+vertically in one line */
-  width: 7.5em;
-  height: 7.5em;
-  /* margin: 5.1rem auto 0; */
-  border-radius: 50%;
-  position: relative;
-  z-index: 1;
-  /* To prevent -1 index from escaping outside the btn */
-}
-/* To make the hover effect in a fancy way */
-.lg-btn::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: hsl(var(--clr-white), 0.136);
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 300ms linear, transform 300ms ease-in-out;
-}
-
-.lg-btn:hover::after,
-.lg-btn:focus::after {
-  /* Instead of doing animation in width and height, cuz that will slow the website*/
-  opacity: 1;
-  transform: scale(1.64);
-}
-
-/* We use '*' instead of 'li' to make it reuseable */
+/* ----------------------Tab List----------------------- */
 .underline-indicators > * {
+  /* We use '*' instead of 'li' to make it reuseable */
   padding: var(--underline-gap, 1rem) 0;
   border: 0;
   border-bottom: 0.2rem solid hsl(var(--clr-white), 0);
@@ -286,8 +231,8 @@ section {
   color: hsl(var(--clr-white) / 1);
   border-color: hsl(var(--clr-white), 1);
 }
-/* ----------------Mobile Navigation Bar---------------- */
 
+/* ----------------Mobile Navigation Bar---------------- */
 .mobile-nav-toggle {
   display: none;
 }
@@ -340,9 +285,10 @@ section {
 }
 
 /* ----------------Tablet Navigation Bar---------------- */
-@media (min-width: 35em) {
-  body {
-    background-position: center center;
+@media (min-width: 35em) and (max-width: 56.999em) {
+  .primary-nav {
+    padding: 0 2.5rem;
+    --gap: 3rem;
   }
   .nav-num {
     display: none;
@@ -366,17 +312,5 @@ section {
   .primary-nav {
     padding-inline: clamp(2rem, 7vw, 6.7rem);
     --gap: clamp(1.5rem, 7vw, 3.5rem);
-  }
-  .primary-nav li {
-    margin: 0;
-    margin-right: 3rem;
-  }
-  section {
-    text-align: start;
-  }
-  main {
-    grid-template-columns: 1fr 1fr;
-    align-items: end;
-    margin: auto 0;
   }
 }
