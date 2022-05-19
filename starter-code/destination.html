@@ -30,7 +30,7 @@
           <a href="./index.html"><span class="nav-num">00</span>Home</a>
         </li>
         <li>
-          <a href="./destination-moon.html"><span class="nav-num">01</span>Destination</a>
+          <a href="./destination.html"><span class="nav-num">01</span>Destination</a>
         </li>
         <li>
           <a href="./crew-commander.html"><span class="nav-num">02</span>Crew</a>
@@ -47,13 +47,13 @@
     <img class="img" src="./assets/destination/image-moon.png" alt="The Moon" />
     <div class="main-content flex">
       <div class="tab-list flex underline-indicators">
-        <button class="btn-tabs" aria-selected="true">Moon</button>
-        <button class="btn-tabs" aria-selected="false">Mars</button>
-        <button class="btn-tabs" aria-selected="false">Europa</button>
-        <button class="btn-tabs" aria-selected="false">Titan</button>
+        <button value='moon' class="btn-tabs" aria-selected="true">Moon</button>
+        <button value='mars' class="btn-tabs" aria-selected="false">Mars</button>
+        <button value='europa' class="btn-tabs" aria-selected="false">Europa</button>
+        <button value='titan' class="btn-tabs" aria-selected="false">Titan</button>
       </div>
 
-      <article>
+      <article class="content">
         <h2 class="fs-800 uppercase ff-serif">Moon</h2>
         <p class="ff-sans-normal txt-light fs-400">
           See our planet as you’ve never seen it before. A perfect relaxing trip
@@ -75,7 +75,9 @@
     </div>
   </main>
   <footer>
+    <script src="data.json"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/data.js"></script>
   </footer>
 </body>
 
