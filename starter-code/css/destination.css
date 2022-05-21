@@ -98,7 +98,7 @@ main {
 
 @media (min-width: 57em) {
   main {
-    margin: 0 0 5rem 9.5rem;
+    margin: 0 0 5rem 10%;
     gap: 4rem 0;
     grid-template-columns: repeat(2, minmax(0, 100rem));
     grid-template-areas:
