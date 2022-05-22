@@ -1,6 +1,5 @@
 :root {
   --bg-page-img: url(../assets/destination/background-destination-mobile.jpg);
-  --bg-moon-img: url(../assets/destination/image-moon.png);
 }
 @media (min-width: 35em) {
   :root {
@@ -30,6 +29,9 @@
 }
 
 /* --------Page Layout-------- */
+body {
+  background-position: top;
+}
 main {
   grid-template-areas:
     'title'
@@ -98,9 +100,10 @@ main {
 
 @media (min-width: 57em) {
   main {
-    margin: 0 0 5rem 10%;
+    margin: 0 10%;
     gap: 4rem 0;
     grid-template-columns: repeat(2, minmax(0, 100rem));
+    grid-template-rows: max-content 1fr 1fr;
     grid-template-areas:
       'title title'
       ' img content'
@@ -109,7 +112,9 @@ main {
   }
   .main-content {
     max-width: 50ch;
+    align-self: start;
     align-items: flex-start;
+    width: 100%;
     text-align: start;
     --gap: 3rem;
   }
@@ -124,6 +129,6 @@ main {
 
   .img {
     width: 70%;
-    min-width: 350px;
+    align-self: start;
   }
 }

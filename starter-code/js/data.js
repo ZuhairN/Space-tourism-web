@@ -19,13 +19,28 @@ const mainContent = document.querySelector('.content');
 const cont = mainContent.children;
 const btns = document.querySelectorAll('.btn-tabs');
 
+window.addEventListener('load', (event) => {
+  if (window.innerWidth > 57 * 16) {
+    img.src = img.src.replace('-landscape.', '-portrait.');
+  }
+});
+
+function changeImg() {
+  if (window.innerWidth > 57 * 16) {
+    img.src = img.src.replace('-landscape.', '-portrait.');
+  } else {
+    img.src = img.src.replace('-portrait.', '-landscape.');
+  }
+}
+window.onresize = changeImg;
 tabList.addEventListener('click', (e) => {
   const str = e.target.value;
-  console.log(str);
   if (e.target.getAttribute('class') === 'btn-tabs') {
     for (let i = 0; i < 4; i++) {
-      btns[i].setAttribute('aria-selected', false);
-      if (e.target.ownerDocument.URL.indexOf(pages[i]) > 0) {
+      if (btns[i]) {
+        btns[i].setAttribute('aria-selected', false);
+      }
+      if (document.URL.indexOf(pages[i]) > 0) {
         page = pages[i];
       }
       if (str.indexOf(tabs[i]) === 0) {
@@ -34,7 +49,6 @@ tabList.addEventListener('click', (e) => {
     }
     e.target.setAttribute('aria-selected', true);
     const object = data[page][tab];
-    console.log(object);
     if (page === 'destination') {
       const meta = document.querySelector('.sub-content').children;
       img.src = object.images.webp;
@@ -48,6 +62,15 @@ tabList.addEventListener('click', (e) => {
       img.alt = object.name;
       cont[0].innerHTML = `<span>${object.role}</span><br/>${object.name}`;
       cont[1].textContent = object.bio;
+    } else {
+      if (window.innerWidth < 57 * 16) {
+        img.src = object.images.landscape;
+      } else {
+        img.src = object.images.portrait;
+      }
+      img.alt = `The ${object.name}`;
+      cont[0].innerHTML = `<span>The terminology...</span><br/>${object.name}`;
+      cont[1].textContent = object.description;
     }
   }
 });
