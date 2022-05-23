@@ -1,3 +1,5 @@
+'use strict';
+
 const pages = ['destination', 'crew', 'technology'];
 const tabs = ['tab-1', 'tab-2', 'tab-3', 'tab-4'];
 let data;
